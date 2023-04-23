@@ -1,15 +1,18 @@
 syntax = "proto3";
 
+// 1. Define package
 package randomPackage;
 
-
+// 2. Define your service
 service Random {
+
+  // 3. Make a rpc method
   rpc PingPong (PingRequest) returns (PongResponse) {};
   rpc RandomNumbers (NumberRequest) returns (stream NumberResponse) {};
   rpc TodoList (stream TodoRequest) returns (TodoResponse);
 }
 
-
+// 4. Define protobuf message depending rpc methods
 message PingRequest {
   string message = 1;
 }
